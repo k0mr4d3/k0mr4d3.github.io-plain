@@ -2,28 +2,28 @@ permalink: /:title/
 plugins:
   - jekyll-sitemap
 
-title: sebbas.org
-url: https://sebbas.org
+title: k0mr4d3
+url: https://k0mr4d3.me
 baseurl: ""
-description: "Personal website of Sebastián"
-author: Sebastián
-twitter: sebbas
-stackoverflow: 1480784/sebbas
-trello: sebbas
-googleplay: sebbas
-vimeo: sebbas
+description: "Where I write about everything"
+author: k0mr4d3
+twitter: k0mr4d352
+stackoverflow: 
+trello: 
+googleplay: 
+vimeo: 
 linkedin: 
-bitbucket: sebbas
-goodreads: sebbas
-delicious: sebbas
-hackernews: sebbas
-medium: sebbas
-youtube: UCiU3oTGKL4GDr5xgK_EMjnQ
-500px: sebbas
-irc: sebbas
-ircchannel: blendercoders # a channel that you are frequenting
-username: sebbas
-email: sebbas@sebbas.org
+bitbucket: 
+goodreads: 
+delicious: 
+hackernews: 
+medium: 
+youtube: 
+500px: 
+irc: 
+ircchannel:  # a channel that you are frequenting
+username: 
+email: 
 
-timezone: Europe/Madrid
+timezone: Asia/Ho_Chi_Minh
 google_analytics_tracking_id: UA-39520634-1
