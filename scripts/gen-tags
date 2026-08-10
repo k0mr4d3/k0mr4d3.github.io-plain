@@ -1,0 +1,50 @@
+#!/bin/sh
+# Regenerate per-tag archive stubs under tag/<name>/ from post front matter.
+#
+# Scans the `tags: [a, b, ...]` front matter of every post across all _posts
+# directories and writes one tag/<tag>/index.html stub per unique tag, removing
+# stubs for tags no longer used. The hand-written tag/index.html is preserved.
+#
+# Pure sh + awk (no Ruby/Python), so it runs anywhere Git Bash does. Wired into
+# the pre-commit hook; can also be run by hand from anywhere in the repo.
+
+set -e
+cd "$(git rev-parse --show-toplevel)"
+
+# Collect unique tags from the inline `tags: [a, b]` front matter of all posts.
+tags=$(awk '
+  FNR==1 { infm=0; fmcount=0 }
+  /^---[[:space:]]*$/ {
+    fmcount++
+    if (fmcount <= 2) { infm = (fmcount == 1); next }
+  }
+  infm && /^tags:[[:space:]]*\[/ {
+    line = $0
+    sub(/^tags:[[:space:]]*\[/, "", line)
+    sub(/\].*$/, "", line)
+    n = split(line, a, ",")
+    for (i = 1; i <= n; i++) {
+      t = a[i]
+      gsub(/^[[:space:]"]+|[[:space:]"]+$/, "", t)
+      if (t != "") print t
+    }
+  }
+' $(find . -path '*/_posts/*.md') | sort -u)
+
+# Remove previously generated per-tag directories (keep tag/index.html).
+for d in tag/*/; do
+  if [ -d "$d" ]; then rm -rf "$d"; fi
+done
+
+# Write a stub for each tag.
+mkdir -p tag
+for t in $tags; do
+  mkdir -p "tag/$t"
+  cat > "tag/$t/index.html" <<EOF
+---
+layout: tag
+tag: $t
+permalink: /tag/$t/
+---
+EOF
+done

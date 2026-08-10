@@ -1,0 +1,14 @@
+---
+layout: page
+title: Tags
+updated: 2026-08-10 00:00:00 +0700
+---
+<ul>
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+  <li>
+    <a href="{{ site.baseurl }}/tag/{{ tag[0] }}/">{{ tag[0] }}</a>
+    ({{ tag[1] | size }})
+  </li>
+{% endfor %}
+</ul>

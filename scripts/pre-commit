@@ -1,11 +1,25 @@
 #!/bin/sh
-# Script to modify the `updated` field in the YAML front matter
-# 
-# Since git does not keep track of hooks in .git/hooks, there is this script in the main project directory (not in .git)
-# It should be symlinked to .git/hooks/pre-commits
+# pre-commit hook:
+#   1. Regenerate per-tag archive pages from post front matter and stage them.
+#   2. Stamp the `updated:` field of modified Markdown files.
+#
+# git does not track .git/hooks, so this lives in the project and should be
+# symlinked (or copied) to .git/hooks/pre-commit:
+#   ln -s -f ../../scripts/pre-commit .git/hooks/pre-commit
 
+root="$(git rev-parse --show-toplevel)"
+
+# 1. Regenerate tag archive stubs.
+sh "$root/scripts/gen-tags"
+git add "$root/tag"
+
+# 2. Stamp `updated:` on modified Markdown files.
 git diff --cached --name-status | grep "^M" | while read a b; do
-  cat $b | sed "/---.*/,/---.*/s/^updated:.*$/updated: $(date "+%Y-%m-%d %T %z")/" > tmp
-  mv tmp $b
-  git add $b
+  case "$b" in
+    *.md)
+      sed "/---.*/,/---.*/s/^updated:.*$/updated: $(date "+%Y-%m-%d %T %z")/" "$b" > tmp
+      mv tmp "$b"
+      git add "$b"
+      ;;
+  esac
 done
