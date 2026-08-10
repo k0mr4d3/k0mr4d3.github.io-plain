@@ -2,6 +2,15 @@ permalink: /:title/
 plugins:
   - jekyll-sitemap
 
+# Syntax highlighting is done at build time by Rouge (Jekyll's default,
+# available on the GitHub Pages native builder). Stated explicitly so the
+# `.highlight` wrapper the CSS targets is pinned. See head.html for the styling.
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+
 title: k0mr4d3
 url: https://k0mr4d3.me
 baseurl: ""

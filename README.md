@@ -34,6 +34,25 @@ The per-tag archive pages are generated from post front matter by
 each commit (it also removes archives for tags no longer used). You can also run
 it by hand: `sh scripts/gen-tags`.
 
+## Syntax highlighting
+
+Fenced code blocks are highlighted per language. Just tag the block with its
+language:
+
+    ```python
+    # a comment (rendered italic)
+    def hello():        # `def` is a keyword (rendered bold)
+        return "hi"
+    ```
+
+Highlighting is done **at build time** by [Rouge][rouge], Jekyll's built-in
+highlighter, so no JavaScript, external stylesheet, or web font is loaded — the
+browser just gets plain HTML. Keeping with the blog's minimal spirit, only two
+effects are applied: **bold** for keywords and *italic* for comments. The two
+CSS rules live in the inline `<style>` in [_includes/head.html][head] and use
+nothing newer than CSS1, so they work on extremely old browsers and degrade to
+readable monospace where CSS is unavailable.
+
 ## Customization
 
 1. [_config.yml][config]: Your email, personal information and usernames should go here.
@@ -46,6 +65,7 @@ This blog is all set for use with Github (it's not using any additional Jekyll p
 
 [sebbas]: https://sebbas.org
 [jekyll]: https://jekyllrb.com
+[rouge]: https://github.com/rouge-ruby/rouge
 [screenshot]: https://dl.dropboxusercontent.com/s/jbb5nfdas6h400b/screenshot_plain_html_blog.png
 [stallman]:   https://stallman.org
 [graham]: http://www.paulgraham.com/index.html

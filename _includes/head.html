@@ -7,7 +7,19 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- "CSS - ain't nobody got time for that" -->
-  <style type="text/css"></style>
+  <!-- ...except two rules for code: bold keywords, italic comments.
+       Rouge highlights at build time, so this is plain CSS1 that works on
+       any browser (and degrades to readable monospace where CSS is absent). -->
+  <style type="text/css">
+    .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn,
+    .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv {
+      font-weight: bold;
+    }
+    .highlight .c, .highlight .ch, .highlight .cm, .highlight .cp,
+    .highlight .cpf, .highlight .c1, .highlight .cs, .highlight .cd {
+      font-style: italic;
+    }
+  </style>
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
