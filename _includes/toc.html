@@ -1,0 +1,17 @@
+{% comment %}
+  Reusable table of contents.
+
+  Drop `{% include toc.html %}` into any post where you want the ToC to
+  appear (usually right after the intro paragraph). kramdown fills it in at
+  build time from the post's `##`/`###` headings, so there is no JavaScript
+  and no per-post upkeep -- the output is a plain nested <ul> of #anchor
+  links that renders on every browser.
+
+  Jump behavior: browsers that navigate to `id` anchors (modern browsers,
+  and IE around 6) will jump to the heading. IE 3 shows the list but does
+  not jump, since it only follows old-style <a name> anchors.
+{% endcomment %}
+**Contents**
+
+* this line is replaced by the generated table of contents
+{:toc}

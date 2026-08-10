@@ -53,6 +53,24 @@ CSS rules live in the inline `<style>` in [_includes/head.html][head] and use
 nothing newer than CSS1, so they work on extremely old browsers and degrade to
 readable monospace where CSS is unavailable.
 
+## Table of contents
+
+For longer posts, drop the reusable include where you want a table of
+contents (usually just after the intro):
+
+```liquid
+{% include toc.html %}
+```
+
+[kramdown][kramdown] builds the list **at build time** from the post's
+`##`/`###` headings, so there is no JavaScript and nothing to maintain per
+post -- add or rename a heading and the ToC follows. The output is a plain
+nested `<ul>` of `#anchor` links, in keeping with the blog's minimal spirit.
+
+Jump support degrades gracefully on old browsers: modern browsers (and IE
+around 6) navigate to the `id` anchors, while IE 3 shows the list but does
+not jump, since it only follows old-style `<a name>` anchors.
+
 ## Customization
 
 1. [_config.yml][config]: Your email, personal information and usernames should go here.
@@ -65,6 +83,7 @@ This blog is all set for use with Github (it's not using any additional Jekyll p
 
 [sebbas]: https://sebbas.org
 [jekyll]: https://jekyllrb.com
+[kramdown]: https://kramdown.gettalong.org
 [rouge]: https://github.com/rouge-ruby/rouge
 [screenshot]: https://dl.dropboxusercontent.com/s/jbb5nfdas6h400b/screenshot_plain_html_blog.png
 [stallman]:   https://stallman.org
