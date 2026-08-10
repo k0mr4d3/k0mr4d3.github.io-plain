@@ -20,6 +20,20 @@ If you would like to have the `updated` field (used to show the last modificatio
 
 `ln -s -f ../../scripts/pre-commit .git/hooks/pre-commit`
 
+## Tags
+
+Add tags to a post with lowercase-hyphenated names in its YAML front matter:
+
+```yaml
+tags: [jekyll, plain-html]
+```
+
+Each tag gets an archive page at `/tag/<tag>/`, and `/tag/` lists all tags.
+The per-tag archive pages are generated from post front matter by
+[scripts/gen-tags][gentags], which the `pre-commit` hook runs automatically on
+each commit (it also removes archives for tags no longer used). You can also run
+it by hand: `sh scripts/gen-tags`.
+
 ## Customization
 
 1. [_config.yml][config]: Your email, personal information and usernames should go here.
@@ -40,6 +54,7 @@ This blog is all set for use with Github (it's not using any additional Jekyll p
 [fork]: https://github.com/sebbas/plain-html-blog/fork
 [bundler]: https://bundler.io
 [precommit]: https://github.com/sebbas/plain-html-blog/blob/master/scripts/pre-commit
+[gentags]: scripts/gen-tags
 [config]: https://github.com/sebbas/plain-html-blog/blob/master/_config.yml
 [cname]: https://github.com/sebbas/plain-html-blog/blob/master/CNAME
 [images]: https://github.com/sebbas/plain-html-blog/tree/master/images
