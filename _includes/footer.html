@@ -5,9 +5,16 @@
     <tb>
       <tr>This page online <code>{{ site.url }}{{ page.url }}</code></tr>
       <tr>
-        <td>
-          <a href="/"><em>{{ site.author }}</em></a> &middot; <a href="mailto:{{ site.email }}"><em>{{ site.email }}</em></a>
-        </td>
+        <td><em>
+          <script language="JavaScript" type="text/javascript"><!--
+            var quotes = new Array(
+              "Simplicity is the ultimate sophistication.",
+              "Make it work, then make it right.",
+              "The best code is no code at all."
+            );
+            document.write(quotes[Math.floor(Math.random() * quotes.length)]);
+          //--></script>
+        </em></td>
         <td align="right">Last updated: {{ page.updated }}</td>
       </tr>
     </tb>
