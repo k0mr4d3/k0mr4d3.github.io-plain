@@ -41,15 +41,6 @@
     /* Title bar */
     .titlebar { background: #000080; padding: 3px; }
     .titlecaption { color: #ffffff; font-weight: bold; }
-    .titlebuttons { white-space: nowrap; }
-    .tbtn, .winicon {
-      background: #c0c0c0; color: #000000;
-      font-family: monospace; font-weight: bold; padding: 0 4px;
-      border-top: 1px solid #ffffff;   border-left: 1px solid #ffffff;
-      border-right: 1px solid #808080; border-bottom: 1px solid #808080;
-    }
-    .tbtn { margin-left: 2px; }
-    .winicon { color: #000080; margin-right: 5px; }
 
     /* Menu bar */
     .menubar { background: #c0c0c0; padding: 3px 2px; margin-top: 2px; }
@@ -73,8 +64,10 @@
       border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;
     }
 
-    /* Code: keep the build-time highlight; the indent works on IE 5 (it has padding). */
-    .highlight { padding-left: 2em; }
+    /* Code blocks: a centered box at least 350px wide (modern browsers). IE 5
+       lacks min-width and display:table, so it falls back to a plain left-aligned
+       block there -- readable, just not centered. */
+    .highlight { display: table; margin: 0.5em auto; min-width: 350px; }
     .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn,
     .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv {
       font-weight: bold;
