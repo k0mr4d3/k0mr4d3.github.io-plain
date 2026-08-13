@@ -2,7 +2,7 @@
 layout: post
 title:  "My first blog post"
 date:   2016-04-01 10:00:00 +0200
-updated: 2026-08-11 02:47:02 +0700
+updated: 2026-08-14 00:50:20 +0700
 category: posts
 tags: [meta]
 ---
@@ -19,6 +19,8 @@ Hello World! Here it is in a few languages, with **bold keywords** and
 def main():
     print("Hello World!")  # to stdout
 ```
+Defines a `main` function that prints a greeting to standard output.
+{:.caption}
 
 ## C
 
@@ -31,3 +33,5 @@ int main(void) {
     return 0;
 }
 ```
+The same program in C, returning `0` to signal success.
+{:.caption}

@@ -71,6 +71,22 @@ Jump support degrades gracefully on old browsers: modern browsers (and IE
 around 6) navigate to the `id` anchors, while IE 3 shows the list but does
 not jump, since it only follows old-style `<a name>` anchors.
 
+## Code captions
+
+To briefly describe what a snippet does, write a paragraph right after the code
+block and tag it with kramdown's attribute syntax:
+
+    ```python
+    def main():
+        print("Hello World!")
+    ```
+    Defines a `main` function that prints a greeting.
+    {:.caption}
+
+kramdown renders the tagged paragraph as `<p class="caption">`, which is styled
+centered and italic in [_includes/head.html][head]. The rule uses only
+`text-align` (CSS1), so the caption centers even on very old browsers.
+
 ## Customization
 
 1. [_config.yml][config]: Your email, personal information and usernames should go here.

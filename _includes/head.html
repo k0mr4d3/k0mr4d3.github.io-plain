@@ -64,10 +64,8 @@
       border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;
     }
 
-    /* Code blocks: a centered box at least 350px wide (modern browsers). IE 5
-       lacks min-width and display:table, so it falls back to a plain left-aligned
-       block there -- readable, just not centered. */
-    .highlight { display: table; margin: 0.5em auto; min-width: 350px; }
+    /* Code blocks: plain left-aligned, no indent. Only the build-time highlight
+       (bold keywords, italic comments) is styled. */
     .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn,
     .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv {
       font-weight: bold;
@@ -75,6 +73,16 @@
     .highlight .c, .highlight .ch, .highlight .cm, .highlight .cp,
     .highlight .cpf, .highlight .c1, .highlight .cs, .highlight .cd {
       font-style: italic;
+    }
+
+    /* Caption a code snippet: a paragraph tagged {:.caption} after the code.
+       text-align is CSS1, so it centers back to IE 3. */
+    .caption {
+      text-align: center;
+      font-style: italic;
+      font-size: 13px;
+      color: #000066;
+      margin: 2px 0 14px;
     }
   </style>
 
