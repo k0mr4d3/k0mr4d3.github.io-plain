@@ -6,14 +6,74 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.author | escape }}{% endif %} &raquo; {{ site.title }}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <!-- "CSS - ain't nobody got time for that" -->
-  <!-- ...except two rules for code: bold keywords, italic comments.
-       Rouge highlights at build time, so this is plain CSS1 that works on
-       any browser (and degrades to readable monospace where CSS is absent). -->
+  <!-- Windows 98/2000 desktop theme. Plain CSS1 bevels + system font, no
+       images/gradients/web fonts. IE 5 and up get the full look; browsers
+       without CSS (IE 3-4, text browsers) ignore it all and render the plain,
+       readable HTML underneath. -->
   <style type="text/css">
-    .highlight {
-      padding-left: 2em;
+    body {
+      background: #008080;                 /* iconic teal desktop */
+      color: #000000;
+      font-family: "MS Sans Serif", Tahoma, Geneva, sans-serif;
+      font-size: 15px;
+      margin: 0;
+      padding: 20px 8px;
+      text-align: center;                  /* centers the window on IE 5 (quirks) */
     }
+
+    /* The window: raised silver panel, width-capped, centered. */
+    .window {
+      width: 800px;                        /* IE 5 cap: fixed, never stretches on hi-res */
+      margin: 0 auto;
+      padding: 3px;
+      background: #c0c0c0;
+      text-align: left;                    /* undo body centering for the content */
+      border-top: 2px solid #ffffff;    border-left: 2px solid #ffffff;
+      border-right: 2px solid #808080;  border-bottom: 2px solid #808080;
+    }
+    /* Modern browsers only (IE <= 8 ignore media queries): fluid up to the cap
+       so the window also shrinks on smaller screens. IE 5 keeps the fixed width. */
+    @media screen and (min-width: 1px) {
+      .window { width: auto; max-width: 800px; }
+    }
+
+    /* Title bar */
+    .titlebar { background: #000080; padding: 3px; }
+    .titlecaption { color: #ffffff; font-weight: bold; }
+    .titlebuttons { white-space: nowrap; }
+    .tbtn, .winicon {
+      background: #c0c0c0; color: #000000;
+      font-family: monospace; font-weight: bold; padding: 0 4px;
+      border-top: 1px solid #ffffff;   border-left: 1px solid #ffffff;
+      border-right: 1px solid #808080; border-bottom: 1px solid #808080;
+    }
+    .tbtn { margin-left: 2px; }
+    .winicon { color: #000080; margin-right: 5px; }
+
+    /* Menu bar */
+    .menubar { background: #c0c0c0; padding: 3px 2px; margin-top: 2px; }
+    .menuitem { color: #000000; text-decoration: none; padding: 2px 10px; }
+    .menuitem:hover { background: #000080; color: #ffffff; }
+
+    /* Content: white sunken 'document' field, comfortable reading size */
+    .window-body { padding: 8px; }
+    .content {
+      background: #ffffff; color: #000000;
+      padding: 16px 22px; font-size: 15px; line-height: 1.5;
+      border-top: 2px solid #808080;   border-left: 2px solid #808080;
+      border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff;
+    }
+
+    /* Status bar: sunken cells */
+    .statusbar { padding: 3px 4px 4px; }
+    .statuscell {
+      color: #000000; font-size: 12px; padding: 1px 6px;
+      border-top: 1px solid #808080;   border-left: 1px solid #808080;
+      border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;
+    }
+
+    /* Code: keep the build-time highlight; the indent works on IE 5 (it has padding). */
+    .highlight { padding-left: 2em; }
     .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn,
     .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv {
       font-weight: bold;
