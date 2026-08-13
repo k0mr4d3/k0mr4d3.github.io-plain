@@ -29,10 +29,13 @@
       border-top: 2px solid #ffffff;    border-left: 2px solid #ffffff;
       border-right: 2px solid #808080;  border-bottom: 2px solid #808080;
     }
-    /* Modern browsers only (IE <= 8 ignore media queries): fluid up to the cap
-       so the window also shrinks on smaller screens. IE 5 keeps the fixed width. */
+    /* Modern browsers only (IE <= 8 ignore media queries): fill the container up
+       to the cap, so every page is the same width and it shrinks on small
+       screens. width:100% (not auto) because a <table> with auto width sizes to
+       its content; border-box keeps padding/border from overflowing. IE 5 keeps
+       the fixed 800px above. */
     @media screen and (min-width: 1px) {
-      .window { width: auto; max-width: 800px; }
+      .window { width: 100%; max-width: 800px; box-sizing: border-box; }
     }
 
     /* Title bar */
