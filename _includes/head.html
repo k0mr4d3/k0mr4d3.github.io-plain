@@ -6,14 +6,31 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.author | escape }}{% endif %} &raquo; {{ site.title }}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <!-- "CSS - ain't nobody got time for that" -->
-  <!-- ...except two rules for code: bold keywords, italic comments.
-       Rouge highlights at build time, so this is plain CSS1 that works on
-       any browser (and degrades to readable monospace where CSS is absent). -->
+  <!-- Tasteful Y2K nod: keeps the lean structure, adds period touches with
+       plain CSS1 + a couple of old HTML tags (marquee, beveled hr). IE 5+ get
+       the full palette; IE 3-4 fall back to plain rules and default fonts;
+       everything stays readable with no CSS at all. -->
   <style type="text/css">
-    .highlight {
-      padding-left: 2em;
+    body {
+      background: #e5e5e5;                        /* soft silver-gray page */
+      color: #000000;
+      font-family: Verdana, Geneva, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      margin: 0;
+      padding: 16px 20px;
     }
+    h1, h2, h3, h4 { color: #000066; }            /* deep navy headings */
+    a:link    { color: #0000cc; }                 /* classic web link colors */
+    a:visited { color: #660099; }
+    a:hover   { color: #cc0000; }
+    hr {
+      height: 2px; border: 0;
+      border-top: 2px groove #999999;             /* beveled rule (IE 3 shows a plain hr) */
+    }
+    marquee { color: #006666; }                   /* gentle teal marquee text */
+
+    .highlight { padding-left: 2em; }
     .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn,
     .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv {
       font-weight: bold;
