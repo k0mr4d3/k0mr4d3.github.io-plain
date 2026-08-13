@@ -5,9 +5,12 @@
 
   <body>
 
-    <div class="window">
+    <!-- The window is built from tables, not divs: IE 3 predates <div> and would
+         collapse div-based chrome into one line. Tables are IE 3's native block
+         layout, so it degrades to readable stacked rows; IE 5+ get the CSS look. -->
+    <table class="window" align="center" border="0" cellpadding="0" cellspacing="0">
 
-      <div class="titlebar">
+      <tr><td class="titlebar">
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
           <tr>
             <td class="titlecaption">
@@ -18,19 +21,23 @@
             </td>
           </tr>
         </table>
-      </div>
+      </td></tr>
 
-      {% include header.html %}
+      <tr><td class="menubar">
+        {% include header.html %}
+      </td></tr>
 
-      <div class="window-body">
+      <tr><td class="window-body">
         <div class="content">
           {{ content }}
         </div>
-      </div>
+      </td></tr>
 
-      {% include footer.html %}
+      <tr><td class="statusbar">
+        {% include footer.html %}
+      </td></tr>
 
-    </div>
+    </table>
 
   </body>
 

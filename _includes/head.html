@@ -18,16 +18,14 @@
       font-size: 15px;
       margin: 0;
       padding: 20px 8px;
-      text-align: center;                  /* centers the window on IE 5 (quirks) */
     }
 
-    /* The window: raised silver panel, width-capped, centered. */
+    /* The window (a <table>, centered via its align="center" attribute so IE 3
+       can center it too): raised silver panel, width-capped. */
     .window {
       width: 800px;                        /* IE 5 cap: fixed, never stretches on hi-res */
-      margin: 0 auto;
       padding: 3px;
       background: #c0c0c0;
-      text-align: left;                    /* undo body centering for the content */
       border-top: 2px solid #ffffff;    border-left: 2px solid #ffffff;
       border-right: 2px solid #808080;  border-bottom: 2px solid #808080;
     }
