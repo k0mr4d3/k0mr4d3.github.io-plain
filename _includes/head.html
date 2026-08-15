@@ -14,7 +14,7 @@
     body {
       background: #008080;                 /* iconic teal desktop */
       color: #000000;
-      font-family: "MS Sans Serif", Tahoma, Geneva, sans-serif;
+      font-family: Tahoma, Verdana, "DejaVu Sans", Arial, sans-serif;
       font-size: 15px;
       margin: 0;
       padding: 20px 8px;
@@ -64,8 +64,26 @@
       border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;
     }
 
-    /* Code blocks: plain left-aligned, no indent. Only the build-time highlight
-       (bold keywords, italic comments) is styled. */
+    /* Code blocks: Rouge renders each block as a 2-column table
+       (<table class="rouge-table">) — a gutter cell of line numbers and a code
+       cell. Collapse the table spacing so it reads as one block; let long lines
+       scroll inside the code cell instead of widening the window. */
+    .highlight pre { margin: 0; line-height: 1.4; }
+    .highlight .rouge-table { border-spacing: 0; border-collapse: collapse; width: 100%; }
+    .highlight .rouge-table td { padding: 0; vertical-align: top; }
+    /* Line-number gutter: right-aligned, muted, set off by a sunken divider, and
+       unselectable so copying the block grabs only the code (ignored pre-CSS3). */
+    .highlight .rouge-gutter {
+      text-align: right;
+      color: #808080;
+      padding: 0 8px;
+      border-right: 1px solid #808080;
+      -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+    }
+    .highlight .rouge-code { width: 100%; padding-left: 10px; }
+    .highlight .rouge-code pre { overflow-x: auto; }
+
+    /* Only the build-time highlight (bold keywords, italic comments) is styled. */
     .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn,
     .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv {
       font-weight: bold;

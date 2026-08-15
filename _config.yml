@@ -10,6 +10,11 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: highlight
+    # Block code gets line numbers. Rouge renders this as a 2-column table
+    # (<table class="rouge-table">): a gutter cell of numbers + a code cell.
+    # Styled in head.html. Scoped to `block` so inline `code` spans stay plain.
+    block:
+      line_numbers: true
 
 title: k0mr4d3
 url: https://k0mr4d3.me
