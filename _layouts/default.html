@@ -5,10 +5,17 @@
 
   <body>
 
+    <basefont face="Tahoma, Verdana, Arial, sans-serif">
+
     <!-- The window is built from tables, not divs: IE 3 predates <div> and would
          collapse div-based chrome into one line. Tables are IE 3's native block
-         layout, so it degrades to readable stacked rows; IE 5+ get the CSS look. -->
-    <table class="window" align="center" border="0" cellpadding="0" cellspacing="0">
+         layout, so it degrades to readable stacked rows; IE 5+ get the CSS look.
+         width="800" (HTML attr, not CSS) fixes the width for IE 3-4, which ignore
+         the CSS width; modern browsers override it with the responsive @media rule.
+         Centering is done in CSS (body text-align + .window margin auto), NOT via
+         align="center" — Lynx over-honors that attribute and shoves everything
+         right, while IE 3 ignores it anyway. -->
+    <table class="window" width="800" border="0" cellpadding="0" cellspacing="0">
 
       <tr><td class="titlebar">
         <span class="titlecaption">{{ page.title | default: site.title }} &mdash; {{ site.author }}</span>
