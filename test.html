@@ -1,41 +1,49 @@
+---
+permalink: /cv/
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CV - Trần Hoàng Anh</title>
     <style>
+        html { background: #6e6e6e; }
         body {
-            font-family: "Times New Roman", Times, serif, Georgia;
-            font-size: 12pt;
-            line-height: 1.15;
-            color: #000;
-            margin: 0.75in;
-            max-width: 800px;
-            background-color: #fff;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #fff;
+            max-width: 780px;
+            margin: 28px auto;
+            padding: 52px 60px 60px;
+            box-shadow: 0 3px 16px rgba(0, 0, 0, 0.4);
         }
         .header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
         .header h1 {
-            font-size: 20pt;
-            margin: 0 0 4px 0;
-            letter-spacing: 0.5px;
+            font-size: 24pt;
+            margin: 0 0 6px 0;
+            letter-spacing: 1px;
         }
         .header p {
-            font-size: 12pt;
+            font-size: 10pt;
             margin: 0;
+            color: #333;
         }
         h2 {
-            font-size: 14pt;
-            border-bottom: 1px solid #000;
-            margin-top: 16px;
-            margin-bottom: 6px;
-            padding-bottom: 1px;
-            letter-spacing: 0.5px;
+            font-size: 13pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1.5px solid #1a1a1a;
+            margin: 22px 0 9px 0;
+            padding-bottom: 3px;
         }
         .job, .edu-item, .activity-item {
-            margin-bottom: 10px;
+            margin-bottom: 13px;
         }
         .row {
             display: flex;
@@ -47,20 +55,25 @@
             display: flex;
             justify-content: space-between;
             font-style: italic;
-            margin-bottom: 3px;
+            color: #333;
+            margin-bottom: 4px;
         }
         ul {
-            margin: 3px 0 8px 18px;
+            margin: 5px 0 9px 20px;
             padding: 0;
         }
         li {
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
         .skills-list {
-            margin: 3px 0 8px 0;
+            margin: 5px 0;
         }
         .skills-list p {
-            margin: 2px 0;
+            margin: 4px 0;
+        }
+        @media (max-width: 680px) {
+            body { margin: 0; max-width: none; padding: 28px 22px; box-shadow: none; }
+            .row, .sub-row { display: block; }
         }
     </style>
 </head>
