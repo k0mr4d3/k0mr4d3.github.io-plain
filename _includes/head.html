@@ -30,10 +30,11 @@
       border-top: 2px solid #ffffff;    border-left: 2px solid #ffffff;
       border-right: 2px solid #808080;  border-bottom: 2px solid #808080;
     }
-    /* IE 3 mis-computes line-height in every form (unitless & em -> px, % -> a
-       huge px value), overlapping or over-spacing text. IE <= 8 ignore @media, so
-       keeping line-height in here hands it only to browsers that get it right;
-       IE 3-8 fall back to their normal default spacing. */
+    /* IE 3 treats every line-height value as pixels (1.5 -> 1.5px overlap; a
+       missing value overlaps too; 150% -> ~150px far apart), so the base rules
+       below give it an explicit, moderate px value it reads correctly. Modern
+       browsers override with proper unitless line-height here; IE <= 8 ignore
+       @media, so they keep the px value. */
     @media screen and (min-width: 1px) {
       .window { width: 100%; max-width: 800px; box-sizing: border-box; }
       .content { line-height: 1.5; }
@@ -50,7 +51,7 @@
     .window-body { padding: 8px; }
     .content {
       background: #ffffff; color: #000000;
-      padding: 16px 22px; font-size: 15px;
+      padding: 16px 22px; font-size: 15px; line-height: 24px;
       border-top: 2px solid #808080;   border-left: 2px solid #808080;
       border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff;
     }
@@ -62,7 +63,7 @@
       border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;
     }
 
-    .highlight pre { margin: 0; }
+    .highlight pre { margin: 0; line-height: 20px; }
     .highlight .rouge-table { border-collapse: collapse; width: 100%; }
     .highlight .rouge-table td { vertical-align: top; }
     .highlight td.rouge-gutter {
