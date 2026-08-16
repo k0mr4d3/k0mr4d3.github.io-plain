@@ -20,37 +20,15 @@ article, header { display: block; }
   text-align: center;
   text-decoration: none;
   color: #ffffff;
-  font-size: 11px;
+  font-size: 15px;
 }
 .deskicon-page {
   display: block;
-  width: 30px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   margin: 0 auto 4px;
-  background: #ffffff;
-  border: 1px solid #000000;
-  position: relative;
-}
-.deskicon-page:before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 9px 9px 0;
-  border-color: transparent #008080 transparent transparent;
-}
-.deskicon-page:after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 6px;
-  width: 14px;
-  height: 2px;
-  background: #000080;
-  box-shadow: 0 5px 0 #808080, 0 10px 0 #808080, 0 15px 0 #808080, 0 20px 0 #808080;
+  background: url("/images/cv-icon.png") no-repeat center;
+  image-rendering: pixelated;
 }
 .deskicon-label {
   display: inline-block;
