@@ -1,0 +1,78 @@
+body {
+  background: #008080;
+  color: #000000;
+  font-family: Tahoma, Verdana, "DejaVu Sans", Arial, sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 20px 8px;
+  text-align: center;
+}
+
+table, td { font-family: Tahoma, Verdana, "DejaVu Sans", Arial, sans-serif; }
+pre, code, tt, .highlight pre { font-family: "Courier New", Courier, monospace; }
+article, header { display: block; }
+
+.window {
+  width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 3px;
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;    border-left: 2px solid #ffffff;
+  border-right: 2px solid #808080;  border-bottom: 2px solid #808080;
+}
+@media screen and (min-width: 1px) {
+  .window { width: 100%; max-width: 800px; box-sizing: border-box; }
+}
+
+.titlebar { background: #000080; padding: 3px; }
+.titlecaption { color: #ffffff; font-weight: bold; }
+
+.menubar { background: #c0c0c0; padding: 3px 2px; margin-top: 2px; }
+.menuitem { color: #000000; text-decoration: none; padding: 2px 4px; }
+.menuitem:hover { background: #000080; color: #ffffff; }
+
+.window-body { padding: 8px; }
+.content {
+  background: #ffffff; color: #000000;
+  padding: 16px 22px; font-size: 15px; line-height: 1.5;
+  border-top: 2px solid #808080;   border-left: 2px solid #808080;
+  border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff;
+}
+
+.statusbar { padding: 3px 4px 4px; }
+.statuscell {
+  color: #000000; font-size: 12px; padding: 1px 6px;
+  border-top: 1px solid #808080;   border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;
+}
+
+.highlight pre { margin: 0; line-height: 1.4; }
+.highlight .rouge-table { border-collapse: collapse; width: 100%; }
+.highlight .rouge-table td { vertical-align: top; }
+.highlight td.rouge-gutter {
+  text-align: right;
+  color: #000000;
+  min-width: 2em;
+  padding: 0 8px;
+  -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+}
+.highlight td.rouge-code { width: 100%; padding: 0 0 0 20px; }
+.highlight .rouge-code pre { overflow-x: auto; }
+
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn,
+.highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv {
+  font-weight: bold;
+}
+.highlight .c, .highlight .ch, .highlight .cm, .highlight .cp,
+.highlight .cpf, .highlight .c1, .highlight .cs, .highlight .cd {
+  font-style: italic;
+}
+
+.caption {
+  text-align: center;
+  font-style: italic;
+  font-size: 13px;
+  color: #000066;
+  margin: 2px 0 14px;
+}
