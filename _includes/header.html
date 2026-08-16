@@ -1,5 +1,10 @@
-<a class="menuitem" href="{{ site.baseurl }}/">Home</a>&nbsp;&nbsp;
-<a class="menuitem" href="{{ site.baseurl }}/posts">Posts</a>&nbsp;&nbsp;
-<a class="menuitem" href="{{ site.baseurl }}/tag">Tags</a>&nbsp;&nbsp;
-<a class="menuitem" href="{{ site.baseurl }}/about">About</a>&nbsp;&nbsp;
-<a class="menuitem" href="{{ site.baseurl }}/contact">Contact</a>
+<!-- Menu as a table so item spacing is set by cellspacing (an HTML attribute
+     honored by IE 3-6 and modern alike), not CSS padding that old browsers drop
+     or &nbsp; that over-spaces browsers which DO honor the padding. -->
+<table border="0" cellpadding="0" cellspacing="4"><tr>
+<td><a class="menuitem" href="{{ site.baseurl }}/">Home</a></td>
+<td><a class="menuitem" href="{{ site.baseurl }}/posts">Posts</a></td>
+<td><a class="menuitem" href="{{ site.baseurl }}/tag">Tags</a></td>
+<td><a class="menuitem" href="{{ site.baseurl }}/about">About</a></td>
+<td><a class="menuitem" href="{{ site.baseurl }}/contact">Contact</a></td>
+</tr></table>
