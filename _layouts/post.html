@@ -11,14 +11,6 @@ layout: default
     </p>
   </header>
 
-  {% comment %}
-    The post title above is the page's <h1>, so demote every heading in the
-    body one tier (# -> h2, ## -> h3, ...) to keep a single top-level heading.
-    kramdown has no offset option, so we rewrite the tags here. Process from
-    h5 down to h1 so a shift never cascades onto an already-shifted heading.
-    Anchor ids are untouched, so the table of contents keeps working. Headings
-    shown inside code samples are escaped (&lt;h1), so they are not matched.
-  {% endcomment %}
   {{ content
     | replace: '<h5', '<h6' | replace: '</h5>', '</h6>'
     | replace: '<h4', '<h5' | replace: '</h4>', '</h5>'

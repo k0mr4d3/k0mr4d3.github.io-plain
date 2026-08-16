@@ -6,10 +6,6 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.author | escape }}{% endif %} &raquo; {{ site.title }}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <!-- CSS is pulled in via @import, which IE 3 doesn't support: it skips the rule
-       and renders the plain, readable HTML underneath (its half-broken CSS engine
-       otherwise overlaps the text). IE 4/5+ and modern browsers process @import
-       and get the full Windows 98 theme. -->
   <style type="text/css">@import url("{{ site.baseurl }}/style.css");</style>
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

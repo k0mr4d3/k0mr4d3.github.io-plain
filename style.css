@@ -9,7 +9,7 @@ body {
 }
 
 table, td { font-family: Tahoma, Verdana, "DejaVu Sans", Arial, sans-serif; }
-pre, code, tt, .highlight pre { font-family: "Courier New", Courier, monospace; }
+pre, code { font-family: "Courier New", Courier, monospace; }
 article, header { display: block; }
 
 .window {
@@ -55,7 +55,7 @@ article, header { display: block; }
   color: #000000;
   min-width: 2em;
   padding: 0 8px;
-  -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+  -webkit-user-select: none; user-select: none;
 }
 .highlight td.rouge-code { width: 100%; padding: 0 0 0 20px; }
 .highlight .rouge-code pre { overflow-x: auto; }
