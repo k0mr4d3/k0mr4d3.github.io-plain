@@ -79,6 +79,14 @@ article, header { display: block; }
   border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff;
 }
 
+/* Keep content within the window border instead of overrunning it. */
+.content { overflow-wrap: break-word; }
+.content img, .content svg, .content video, .content iframe {
+  max-width: 100%; height: auto;
+}
+.content pre { overflow-x: auto; }
+.content table { display: block; max-width: 100%; overflow-x: auto; }
+
 .statusbar { padding: 3px 4px 4px; }
 .statuscell {
   color: #000000; font-size: 12px; padding: 1px 6px;
