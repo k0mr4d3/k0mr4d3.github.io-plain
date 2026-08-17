@@ -52,6 +52,18 @@ article, header { display: block; }
   .window { width: 100%; max-width: 800px; box-sizing: border-box; }
 }
 
+/* Below ~984px the centered window reaches the fixed icon and overlaps it.
+   Drop the icon into normal flow above the window instead. */
+@media screen and (max-width: 984px) {
+  .deskicon {
+    position: static;
+    display: inline-block;
+    margin: 0 auto 16px;
+    left: auto;
+    top: auto;
+  }
+}
+
 .titlebar { background: #000080; padding: 3px; }
 .titlecaption { color: #ffffff; font-weight: bold; }
 
