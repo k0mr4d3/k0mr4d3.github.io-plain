@@ -87,12 +87,15 @@ article, header { display: block; }
 .content pre { overflow-x: auto; }
 .content table { display: block; max-width: 100%; overflow-x: auto; }
 
-.statusbar { padding: 3px 4px 4px; }
+.statusbar { display: flex; gap: 2px; padding: 3px 4px 4px; }
 .statuscell {
   color: #000000; font-size: 12px; padding: 1px 6px;
+  box-sizing: border-box; min-width: 0; overflow-wrap: break-word;
   border-top: 1px solid #808080;   border-left: 1px solid #808080;
   border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;
 }
+.statuscell-quote   { flex: 1 1 auto; }
+.statuscell-updated { flex: 0 1 auto; max-width: 50%; text-align: right; }
 
 .highlight { overflow-x: auto; }
 .highlight pre { margin: 0; line-height: 1.4; }

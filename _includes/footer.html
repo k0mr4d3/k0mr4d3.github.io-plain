@@ -1,15 +1,11 @@
-<table width="100%" border="0" cellpadding="0" cellspacing="2">
-  <tr>
-    <td class="statuscell" width="100%"><em>
-      <script language="JavaScript" type="text/javascript"><!--
-        var quotes = new Array(
-          "Simplicity is the ultimate sophistication.",
-          "Make it work, then make it right.",
-          "The best code is no code at all."
-        );
-        document.write(quotes[Math.floor(Math.random() * quotes.length)]);
-      //--></script>
-    </em></td>
-    <td class="statuscell" align="right" nowrap>Last updated: {{ page.updated }}</td>
-  </tr>
-</table>
+<span class="statuscell statuscell-quote"><em>
+  <script language="JavaScript" type="text/javascript"><!--
+    var quotes = new Array(
+      "Simplicity is the ultimate sophistication.",
+      "Make it work, then make it right.",
+      "The best code is no code at all."
+    );
+    document.write(quotes[Math.floor(Math.random() * quotes.length)]);
+  //--></script>
+</em></span>
+<span class="statuscell statuscell-updated">Last updated: {{ page.updated }}</span>
