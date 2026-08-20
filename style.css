@@ -86,6 +86,7 @@ article, header { display: block; }
 }
 .content pre { overflow-x: auto; }
 .content table { display: block; max-width: 100%; overflow-x: auto; }
+.content table.postnav { display: table; width: 100%; overflow-x: visible; }
 
 .statusbar { display: flex; flex-wrap: wrap; gap: 2px; padding: 3px 4px 4px; }
 .statuscell {
